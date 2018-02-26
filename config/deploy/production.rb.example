@@ -1,0 +1,7 @@
+server "server.example.com", user: "q2", port: 22, roles: %w{app}, q2root: "/home/q2/base/q2srv"
+
+set :ssh_options, {
+  keys: %w(~/.ssh/id_rsa),
+  forward_agent: true,
+  auth_methods: %w(publickey)
+}

@@ -1,0 +1,8 @@
+lock "~> 3.10.1"
+
+set :application, "my-custom-configs-folder"
+set :repo_url, "git@example.com:example.git"
+set :deploy_to, "/home/q2/base/my-configs"
+set :format, :airbrussh
+set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
+set :keep_releases, 5

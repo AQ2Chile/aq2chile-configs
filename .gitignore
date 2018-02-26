@@ -1,0 +1,4 @@
+log/*
+
+config/deploy.rb
+config/deploy/production.rb
