@@ -10,7 +10,7 @@ This is a small capistrano app that's meant to help with the deployment of confi
 
 ## Setup:
 
-Assuming you already have ruby installed
+Assuming you already have ruby and bundler installed:
 
 1. Install capistrano gem:
 
@@ -19,6 +19,7 @@ Assuming you already have ruby installed
 ```
 
 2. Setup your `config/deploy.rb` and `config/deploy/production.rb` accordingly.
+
 **NOTE:** I'm not gonna teach you how to use capistrano here, so go to the official docs: http://capistranorb.com/
 
 ## Usage:
