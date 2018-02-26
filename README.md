@@ -29,7 +29,7 @@ Since I'm managing an action server, most of my files are inside the `action` fo
 
 When the files get synced they follow the structure inside the `files` folder. Meaning that the `files` folder acts as a representation for your q2 root folder.
 
-```ruby
+```bash
     cap -T # Lists all available tasks
 
     # deploy files and link them
