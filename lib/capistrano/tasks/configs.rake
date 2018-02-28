@@ -6,7 +6,7 @@ namespace :configs do
       files         = fulldir_files.map{|f| f.gsub("./files/", "")}
 
       files.each do |file|
-        puts "ln -nfs #{release_path}/files/#{file} #{server.properties.q2root}/#{file}"
+        run "ln -nfs #{release_path}/files/#{file} #{server.properties.q2root}/#{file}"
       end
     end
   end
