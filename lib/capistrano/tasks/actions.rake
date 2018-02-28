@@ -37,10 +37,10 @@ namespace :server do
     end
   end
 
-  desc "Hard recycle servers"
+  desc "Hard recycle servers <screen_name>"
   task :hard_recycle do
     on roles (:app) do |server|
-      execute "screen -S #{ARGV[2]} -X stuff 'recycle\n'"
+      execute "screen -S #{ARGV[2]} -X stuff recycle\n"
     end
   end
 
