@@ -24,10 +24,10 @@ Assuming you already have ruby and bundler installed:
 
 ## Usage:
 
-All the relevant files for the q2 server are inside the `files` folder.
+All the relevant files for the q2 server are inside the `q2base` folder.
 Since I'm managing an action server, most of my files are inside the `action` folder, but this may as well be some other mod folder.
 
-When the files get synced they follow the structure inside the `files` folder. Meaning that the `files` folder acts as a representation for your q2 root folder.
+When the files get synced they follow the structure inside the `q2base` folder. Meaning that the `q2base` folder acts as a representation for your q2 root folder.
 
 ```bash
     cap -T # Lists all available tasks
@@ -40,6 +40,11 @@ When the files get synced they follow the structure inside the `files` folder. M
 ```
 
 All the tasks can be changed inside the `lib/capistrano/tasks` folder.
+
+**NOTE:**
+The files inside `q2base/shared` should be uploaded **manually** to `<deploy_folder>/shared`, they are there just as examples, but they contain sensitive passwords that should **not** be committed to any repository.
+
+Use your favorite ftp client for this.
 
 ## Development
 
