@@ -99,15 +99,21 @@ LOGFILE: 1 MOD "q2admin.log"
 ;
 ; Log Events:
 ;
+
+; SKINCHANGE: YES 1 "Skin: Time \"#t\" Name \"#n\" \"#m -->> #s\"  Ping \"#p\" IP \"#i\""
+
 ZBOT: YES 1 "Proxy User: Time \"#t\" name \"#n\" Ping \"#p\" IP \"#i\" I(#e)"
 ZBOTIMPULSES: YES 1 "ZBOT Impulse: Time \"#t\" Impulse \"#n generated a impulse #m\" Ping \"#p\" IP \"#i\""
 IMPULSES: YES 1 "Impulse: Time \"#t\" Impulse \"#n generated a impulse #e\"  Ping \"#p\" IP \"#i\""
 NAMECHANGE: YES 1 "Name: Time \"#t\" \"#m -->> #n\"  Ping \"#p\" IP \"#i\""
+INTERNALWARN: YES 1 "Internal Warning(#e): Time \"#t\" Name \"#n\"  Ping \"#p\" IP \"#i\" #m"
+INVALIDIP: YES 1 "Client has invalid IP Address: Time \"#t\" Name \"#n\"  Ping \"#p\" IP \"#i\""
+
 CLIENTCONNECT: NO 1 "Connect: Time \"#t\" Name \"#n\"  Ping \"#p\" IP \"#i\""
 CLIENTBEGIN: NO 1 "Player Begin: Time \"#t\" Name \"#n\"  Ping \"#p\" IP \"#i\""
 CLIENTDISCONNECT: NO 1 "Disconnect: Time \"#t\" Name \"#n\"  Ping \"#p\" IP \"#i\""
-INTERNALWARN: YES 1 "Internal Warning(#e): Time \"#t\" Name \"#n\"  Ping \"#p\" IP \"#i\" #m"
-;INVALIDIP: YES 1 "Client has invalid IP Address: Time \"#t\" Name \"#n\"  Ping \"#p\" IP \"#i\" #m"
-INVALIDIP: YES 1 "Client has invalid IP Address: Time \"#t\" Name \"#n\"  Ping \"#p\" IP \"#i\""
+BAN: YES 1 "Client Banned: Time \"#t\" Name \"#n\" IP \"#i\""
+CLIENTKICK: YES 1 "Client Kicked: Time \"#t\" Name \"#n\" IP \"#i\""
+CLIENTCMDS: YES 1 "Client CMD: Time \"#t\" Name \"#n\" IP \"#i\""
 
-; SKINCHANGE: YES 1 "Skin: Time \"#t\" Name \"#n\" \"#m -->> #s\"  Ping \"#p\" IP \"#i\""
+CLIENTLRCON: YES 1 "Client used LRCON: Time \"#t\" Name \"#n\" IP \"#i\" Lrcon CMD \"#m\""
