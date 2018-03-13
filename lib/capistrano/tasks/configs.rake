@@ -12,6 +12,8 @@ namespace :configs do
       cleaned_common_files.each do |file|
         execute "ln -nfs #{release_path}/#{q2base_name}/#{file} #{server.properties.q2root}/#{file}"
       end
+
+      execute "ln -nfs #{release_path}/#{q2base_name}/gs_starter.cfg #{server.properties.q2root}/gs_starter.cfg"
     end
   end
 
