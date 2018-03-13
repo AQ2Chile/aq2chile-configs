@@ -2,24 +2,24 @@
 ; The ban file list for the q2admin dll.
 ;
 ;
-; Banning can be enabled and disabled by the 'nickbanning_enable', 
-; 'ipbanning_enable' and 'chatbanning_enable' commands.  
+; Banning can be enabled and disabled by the 'nickbanning_enable',
+; 'ipbanning_enable' and 'chatbanning_enable' commands.
 ;
 ; They can be enabled/disabled in the q2admin.txt by changing the
 ; there values to "Yes" or "No".
-; 
+;
 ; e.g. in the q2admin.log file:
 ; nickbanning_enable "Yes"
 ; ipbanning_enable "Yes"
 ; chatbanning_enable "Yes"
-; 
-; They can also be enabled/disabled from the server console / client admin 
-; console as well.  See section 2.3 and 2.4 in the readme.txt for how to do 
+;
+; They can also be enabled/disabled from the server console / client admin
+; console as well.  See section 2.3 and 2.4 in the readme.txt for how to do
 ; this.
-; 
-; q2adminban.txt is loaded from the Quake2 directory and then the mod directory 
+;
+; q2adminban.txt is loaded from the Quake2 directory and then the mod directory
 ; in that order.
-; 
+;
 ;
 ; The format for each ban line is:
 ;
@@ -39,12 +39,12 @@
 ; CHATBAN: [LIKE/RE(LIKE)] "xxx" [MSG "xxx"]
 ;
 ; e.g.
-; CHATBAN: "fuck" 
+; CHATBAN: "fuck"
 ; CHATBAN: RE "f[u$@#%]ck"
 ;
 ;
 ; INCLUDE: "banfile"
 ;
-; e.g. 
+; e.g.
 ; INCLUDE: "/banlist/banlist.txt"
 ;

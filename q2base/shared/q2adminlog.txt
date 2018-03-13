@@ -10,12 +10,12 @@
 ; Where LogNum is a number between 1 and 32.
 ; [MOD] is to create the log in the current mod directory running.
 ;
-; LogFileNmae can be a relative path or a full path if MOD isn't used.  
+; LogFileNmae can be a relative path or a full path if MOD isn't used.
 ; Also you can use '%p' in the file name. This is replaced by the server
-; port number to give a unique log for each server within the same mod 
+; port number to give a unique log for each server within the same mod
 ; that is run.
 ;
-; e.g. 
+; e.g.
 ; LOGFILE: 1 "q2admin.log"
 ; LOGFILE: 2 MOD "q2admin%p.log"
 ;
@@ -60,9 +60,9 @@
 ; #t = Date / Time
 ; #m = Impulse Message (zbot impulse only)
 ; #e = Impulse Number (impulse and zbot impulse only)
-; #e = Internal zbot/ratbot detect number 
-;       50 to -2 is a zbot detect, 
-;       -3 or -4 is a ratbot detect, 
+; #e = Internal zbot/ratbot detect number
+;       50 to -2 is a zbot detect,
+;       -3 or -4 is a ratbot detect,
 ;       -5 is a timescale cheat detect
 ;       -6 is a Nirto2 / BW-Proxy / Xania
 ;       -7 is a cl_pitchspeed change detect
@@ -85,9 +85,9 @@
 ;
 ; Note: CHAT, SERVERSTART, SERVERINIT and SERVEREND can't use client format values.
 ;
-; WARNING: PERFORMANCEMONITOR will slow the server down a little and it will create 
+; WARNING: PERFORMANCEMONITOR will slow the server down a little and it will create
 ;          very very large log files in a short amount of time.
-;          It is meant to collect / pin-point performance problems with q2admin and 
+;          It is meant to collect / pin-point performance problems with q2admin and
 ;          the underlying mod.
 ;
 
@@ -95,6 +95,7 @@
 ; Log files:
 ;
 LOGFILE: 1 MOD "q2admin.log"
+LOGFILE: 2 MOD "q2admin_clientcmd.log"
 
 ;
 ; Log Events:
@@ -102,18 +103,23 @@ LOGFILE: 1 MOD "q2admin.log"
 
 ; SKINCHANGE: YES 1 "Skin: Time \"#t\" Name \"#n\" \"#m -->> #s\"  Ping \"#p\" IP \"#i\""
 
-ZBOT: YES 1 "Proxy User: Time \"#t\" name \"#n\" Ping \"#p\" IP \"#i\" I(#e)"
-ZBOTIMPULSES: YES 1 "ZBOT Impulse: Time \"#t\" Impulse \"#n generated a impulse #m\" Ping \"#p\" IP \"#i\""
-IMPULSES: YES 1 "Impulse: Time \"#t\" Impulse \"#n generated a impulse #e\"  Ping \"#p\" IP \"#i\""
-NAMECHANGE: YES 1 "Name: Time \"#t\" \"#m -->> #n\"  Ping \"#p\" IP \"#i\""
-INTERNALWARN: YES 1 "Internal Warning(#e): Time \"#t\" Name \"#n\"  Ping \"#p\" IP \"#i\" #m"
-INVALIDIP: YES 1 "Client has invalid IP Address: Time \"#t\" Name \"#n\"  Ping \"#p\" IP \"#i\""
+SERVERSTART: YES 1 + 2 "[\"#t\"] -- Server Start"
+SERVERINIT: YES 1 + 2 "[\"#t\"] -- Server Init"
+SERVEREND: YES 1 + 2 "[\"#t\"] -- Server End"
+INTERNALWARN: YES 1 + 2 "[\"#t\"] -- Server Internal Warn: Message \"#m\" Number \"#e\""
 
-CLIENTCONNECT: NO 1 "Connect: Time \"#t\" Name \"#n\"  Ping \"#p\" IP \"#i\""
-CLIENTBEGIN: NO 1 "Player Begin: Time \"#t\" Name \"#n\"  Ping \"#p\" IP \"#i\""
-CLIENTDISCONNECT: NO 1 "Disconnect: Time \"#t\" Name \"#n\"  Ping \"#p\" IP \"#i\""
-BAN: YES 1 "Client Banned: Time \"#t\" Name \"#n\" IP \"#i\""
-CLIENTKICK: YES 1 "Client Kicked: Time \"#t\" Name \"#n\" IP \"#i\""
-CLIENTCMDS: YES 1 "Client CMD: Time \"#t\" Name \"#n\" IP \"#i\""
+ZBOT: YES 1 "[\"#t\"] -- Proxy User: Name \"#n\" Ping \"#p\" IP \"#i\" I(#e)"
+ZBOTIMPULSES: YES 1 "[\"#t\"] -- ZBOT Impulse: Impulse \"#n generated a impulse #m\" Ping \"#p\" IP \"#i\""
+IMPULSES: YES 1 "[\"#t\"] -- Impulse: Impulse \"#n generated a impulse #e\"  Ping \"#p\" IP \"#i\""
+NAMECHANGE: YES 1 "[\"#t\"] -- Name: \"#m -->> #n\"  Ping \"#p\" IP \"#i\""
+INTERNALWARN: YES 1 "[\"#t\"] -- Internal Warning(#e): Name \"#n\"  Ping \"#p\" IP \"#i\" #m"
+INVALIDIP: YES 1 "[\"#t\"] -- Invalid IP: Name \"#n\"  Ping \"#p\" IP \"#i\""
 
-CLIENTLRCON: YES 1 "Client used LRCON: Time \"#t\" Name \"#n\" IP \"#i\" Lrcon CMD \"#m\""
+CLIENTCONNECT: YES 1 "[\"#t\"] -- Client Connect: Name \"#n\"  Ping \"#p\" IP \"#i\""
+CLIENTBEGIN: YES 1 "[\"#t\"] -- Client Begin: Name \"#n\"  Ping \"#p\" IP \"#i\""
+CLIENTDISCONNECT: YES 1 "[\"#t\"] -- Client Disconnect: Name \"#n\"  Ping \"#p\" IP \"#i\""
+BAN: YES 1 "[\"#t\"] -- Client Ban: Name \"#n\" IP \"#i\""
+CLIENTKICK: YES 1 "[\"#t\"] -- Client Kick: Name \"#n\" IP \"#i\""
+CLIENTLRCON: YES 1 "[\"#t\"] -- Client LRCON: Name \"#n\" IP \"#i\" Lrcon CMD \"#m\""
+
+CLIENTCMDS: YES 2 "[\"#t\"] -- Client CMD: Name \"#n\" IP \"#i\""
